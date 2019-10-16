@@ -2,7 +2,7 @@
 [Summernote](https://summernote.org/) plugin to insert files by URL or file upload.
 Based on the [summernote-audio](https://github.com/taalendigitaal/summernote-audio) plugin.
 
-## Installation
+## Classic use
 
 Include the plugin script after including Summernote:
 
@@ -11,6 +11,11 @@ Include the plugin script after including Summernote:
 
 <script type="text/javascript" src="summernote-file.js"></script>
 ```
+
+## NPM
+
+You can add summernote-file in your project with using [npm](https://www.npmjs.com/) : npm i summernote-file
+
 
 ## Configuration
 
