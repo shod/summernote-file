@@ -1,8 +1,16 @@
 # summernote-file
-[Summernote](https://summernote.org/) plugin to insert files by URL or file upload.
-Based on the [summernote-audio](https://github.com/taalendigitaal/summernote-audio) plugin.
 
-## Classic use
+[Summernote](https://summernote.org/) plugin to insert files by URL or file upload.
+
+[![npm version](https://badge.fury.io/js/summernote-file.svg)](https://badge.fury.io/js/summernote-file)
+
+_Based on the [summernote-audio](https://github.com/taalendigitaal/summernote-audio) plugin._
+
+It can handle **picture files** (jpg, png, gif, wvg, webp), **audio files** (mp3, ogg, oga), and **video files** (mp4, ogv, webm) without any upload, in base64.
+
+You can also define your own handle in order to **upload these files, and any other type of file** into your server, and render them in Summernote.
+
+### Classic use
 
 Include the plugin script after including Summernote:
 
@@ -12,46 +20,50 @@ Include the plugin script after including Summernote:
 <script type="text/javascript" src="summernote-file.js"></script>
 ```
 
-## NPM
+### NPM
 
 You can add summernote-file in your project with using [npm](https://www.npmjs.com/) : npm i summernote-file
 
 
-## Configuration
+### Configuration
 
 Add the file button to the Summernote toolbar:
 
-````javascript
+```javascript
 $('.summernote').summernote({
     toolbar:[
         ['insert', ['link', 'picture', 'video', 'file']],
     ],
 });
-````
+```
 
-## File type
+### File type
 
 By default, the plugin can handle picture, audio, and video files, in **base64**.
-In order to handle all type of files, **you have to implement the "onFileUpload" callback** for uploading them onto you server :
+In order to handle all type of files, **you have to implement the "onFileUpload" callback** for uploading them into you server :
 
-````javascript
+```javascript
 $('.summernote').summernote({
-    ...
+    //Your classic summernote code here
+
+    //Define the callback
     callbacks: {
         onFileUpload: function(file) {
             //Your own code goes here
         },
     },
 });
-````
+```
 
-## Callback exemple for uploading
+### Callback exemple for uploading
 
 Here is an exemple of the callback (with upload progress handling) :
 
-````javascript
+```javascript
 $('.summernote').summernote({
-    ...
+    //Your classic summernote code here
+    
+    //Define the callback
     callbacks: {
         onFileUpload: function(file) {
             myOwnCallBack(file[0]);
@@ -123,11 +135,9 @@ function progressHandlingFunction(e) {
         }
     }
 }
-````
+```
 
-
-
-## Translations
+### Translations
 
 Currently supports the following languages:
 * English
