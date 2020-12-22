@@ -79,7 +79,7 @@
 				let button = ui.button({
 					// icon for button
 					contents: options.file.icon,
-					
+					container: 'body',
 					// tooltip for button
 					tooltip: lang.file.file,
 					click: function (e) {
